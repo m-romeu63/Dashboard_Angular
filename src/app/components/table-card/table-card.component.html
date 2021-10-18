@@ -1,0 +1,25 @@
+<div class="card widget-flat shadow">
+  <div class="card-body">
+    <h5 class="text-muted fw-normal mt-0">Les 10 produits les plus vendus !</h5>
+    <table class="table table-striped table-responsive">
+      <thead>
+        <tr>
+          <th scope="col">Nom du produit</th>
+          <th scope="col">Prix à l'unité</th>
+          <th scope="col">Nombre d'exemplaires vendus</th>
+          <th scope="col">Revenus totaux du produit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr app-table-data
+            *ngFor="let product of products"
+            [productName]="product.productName"
+            [price]="product.price"
+            [numberOfSales]="product.salesNumber"
+            [totalRevenue]="product.totalRevenue"></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+

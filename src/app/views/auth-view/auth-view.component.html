@@ -1,0 +1,34 @@
+<div class="row mt-5">
+  <h2 class="text-center mb-4">
+    La Nîmes'alerie : Dashboard
+  </h2>
+  <hr>
+  <div class="col-6 p-3 card shadow mx-auto">
+    <h3 class="text-center">M. Capard, connectez-vous</h3>
+    <div class="alert alert-danger my-2" *ngIf="errMsg">
+      {{errMsg}}
+    </div>
+    <form (ngSubmit)="onSubmitAuthForm()" #authForm="ngForm">
+      <div class="mb-3">
+        <label for="email">
+          Nom d'utilisateur
+        </label>
+        <input #usernameInput="ngModel" id="username" name="username" class="form-control" placeholder="Nom d'utilisateur" required [(ngModel)]="username">
+        <app-errors-form [control]="usernameInput" controlLabel="'Nom d'utilisateur'"></app-errors-form>
+      </div>
+      <div class="mb-3">
+        <label for="password">
+          Mot de passe
+        </label>
+        <input #passwordInput="ngModel" id="password" name="password" class="form-control" placeholder="Mot de passe" type="password" required [(ngModel)]="password">
+        <app-errors-form [control]="passwordInput" controlLabel="'mot de passe'"></app-errors-form>
+      </div>
+      <div class="row col-4 mx-auto">
+        <button type="submit" class="btn btn-dark btn-lg" [disabled]="authForm.invalid">
+          Me connecter
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+

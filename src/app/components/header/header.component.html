@@ -1,0 +1,18 @@
+<header class="p-3 mb-3 border-bottom">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-end">
+      <div class="btn-group mr-3">
+        <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+        <button type="button" class="btn">M. Capard</button>
+        <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+          <button class="btn dropdown-toggle-split" ngbDropdownToggle></button>
+          <div class="dropdown-menu" ngbDropdownMenu>
+            <button ngbDropdownItem><i class="bi bi-person-circle"></i> Mon compte</button>
+            <button ngbDropdownItem><i class="bi bi-gear-fill"></i> Paramètres</button>
+            <button (click)="onClickSignOut()" ngbDropdownItem><i class="bi bi-box-arrow-right"></i> Se déconnecter</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
